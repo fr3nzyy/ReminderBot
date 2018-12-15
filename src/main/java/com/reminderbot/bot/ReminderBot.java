@@ -52,14 +52,15 @@ public class ReminderBot extends TelegramLongPollingBot {
             if (minutesToWait < 0)
                 minutesToWait += 60;
             execute(sendMessage.setText(String.valueOf(minutesToWait)));
-            Thread.sleep(Long.valueOf(hoursToWait * 60 * 60 * 1000 + minutesToWait * 60 * 1000));
+//            Thread.sleep(Long.valueOf(hoursToWait * 60 * 60 * 1000 + minutesToWait * 60 * 1000));
             execute(sendMessage.setText("Сообщение, которое нужно отправить"));
 //            }
         } catch (TelegramApiException e) {
             log(Level.SEVERE, "Exception: ", e.toString());
-        } catch (InterruptedException e) {
-            log(Level.SEVERE, "Exception: ", e.toString());
         }
+//         catch (InterruptedException e) {
+//            log(Level.SEVERE, "Exception: ", e.toString());
+//        }
 
     }
 
